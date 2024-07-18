@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>AI President</title>
+</head>
+
+<body>
+    <div class="dynamic-margin">
+        <video controls width="1500">
+            <source src="{{ url_for('static', filename='question_clip.mp4')}}" type="video/mp4">
+        </video>
+    </div>
+    <div id="inputContainer">
+        <textarea id="userInput" placeholder="Mr. President, how are you?"></textarea>
+        <button id="recordButton" title="Record Audio" data-recording-time="{{ recording_time }}">
+            <svg id="micIcon" viewBox="0 0 24 24">
+                <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 
+                    1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 
+                    6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z" />
+            </svg>
+        </button>
+        <button id="sendArrow" style="display: none;" title="Submit">
+            <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+            </svg>
+        </button>
+    </div>
+
+    <div id="toastContainer">
+        <div id="toastMessage" class="toast-hidden">
+            <span id="toastText"></span>
+            <button id="toastCloseBtn">X</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='socket.io.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+
+</html>

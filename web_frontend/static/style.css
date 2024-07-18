@@ -1,0 +1,131 @@
+body {
+    background-color: #d9d9d9;;
+    display: flex; /* Center the video */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.dynamic-margin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: calc(5vw + 10px);
+    margin-right: calc(5vw + 10px)
+}
+
+
+video {
+    border: 2px solid #333;
+    max-width: 100%; /* Allow the video to scale down to fit its container */
+    height: 800px;    /* Maintain aspect ratio while scaling */
+}
+
+  
+#inputContainer {
+    position: fixed;           /* Fix the container to the bottom */
+    bottom: 5px;              /* Adjust spacing from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: 90%;                 /* Adjust width as needed */
+    max-width: 500px;          /* Limit maximum width */
+    background-color: #E0E0E0;
+    padding: 5px;   
+    border-radius: 40px;
+    border: 2px solid #28a745;
+    display: flex;
+    align-items: center;
+}
+
+#userInput {
+    flex-grow: 1;               
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 40px;       
+    resize: vertical;
+    height: 25px;
+}
+
+#recordButton {
+    background-color: transparent; /* Transparent background for the button */
+    border: none;                 /* No border */
+    padding-right: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#recordButton svg {
+    width: 28px;
+    height: 28px;
+    fill: #5f6368;          /* Icon color */
+}
+
+.ripple {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(66, 133, 244, 0.5); /* Google Blue with transparency */
+  position: absolute;
+  transform: translate(-50%, -50%); /* Center the ripple */
+  animation: rippleAnimation 1s linear infinite;
+}
+
+@keyframes rippleAnimation {
+  to {
+    width: 36px;   /* Expand the button size */
+    height: 36px;
+    opacity: 1;
+  }
+}
+
+#sendArrow {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#sendArrow svg {
+    width: 36px;
+    height: 36px;
+    fill: #2e5eac;          /* Icon color */
+}
+
+#toastContainer {
+    position: fixed;
+    bottom: 100px;
+    right: 10px;
+    z-index: 3; /* Make sure it's on top of other elements */
+}
+  
+#toastMessage {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* For horizontal layout of text and button */
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth fade-in/out */
+}
+  
+#toastMessage.toast-show {
+    opacity: 1;
+}
+  
+.toast-hidden {
+    display: none;
+}
+  
+#toastText {
+    margin-right: 10px;
+}
+  
+#toastCloseBtn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
