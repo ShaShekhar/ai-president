@@ -2,7 +2,7 @@
 
 Talk to President Biden in real time using the web interface's audio feature. Responses will stream live. To install, clone the repository and follow the instructions.
 
-![demo](https://github.com/user-attachments/assets/31e05a2a-80ad-42b9-9ca4-ddf0cfe38a72)
+https://github.com/user-attachments/assets/a80052e9-6d0a-4100-ad2b-0f3fd7261cf3
 
 ## Project Structure
 
