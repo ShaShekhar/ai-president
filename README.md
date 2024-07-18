@@ -1,4 +1,4 @@
-## President-AI:
+## AI-President:
 
 Talk to President Biden in real time using the web interface's audio feature. Responses will stream live. To install, clone the repository and follow the instructions.
 
