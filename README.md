@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 ## Conversational AI Deepfakes
-=======
-## AI-President:
->>>>>>> 31d26c7422b6b70e2460be7aef36b1de26da766c
 
 Talk to AI Deepfake in real time. Responses will stream live. To install, clone the repository and follow the instructions.
 
