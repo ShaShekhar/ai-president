@@ -42,7 +42,7 @@ class Arguments:
         self.fps = 25.0 # Can be specified only if input is a static image (default: 25)
         self.pads = [0, 20, 0, 0] # Padding (top, bottom, left, right). Please adjust to include chin at least
         self.face_det_batch_size = 4 # Batch size for face detection
-        self.LNet_batch_size = 16 # Batch size for LNet
+        self.LNet_batch_size = 32 # Batch size for LNet
         self.img_size = 384
         # Crop video to a smaller region (top, bottom, left, right). Applied after resize_factor and rotate arg.
         # Useful if multiple face present. -1 implies the value will be auto-inferred based on height, width

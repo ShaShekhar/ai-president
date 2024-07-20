@@ -1,6 +1,6 @@
-## President-AI:
+## Conversational AI Deepfakes
 
-Talk to President Biden in real time using the web interface's audio feature. Responses will stream live. To install, clone the repository and follow the instructions.
+Talk to AI Deepfake in real time. Responses will stream live. To install, clone the repository and follow the instructions.
 
 ![demo](https://github.com/user-attachments/assets/31e05a2a-80ad-42b9-9ca4-ddf0cfe38a72)
 
@@ -22,8 +22,8 @@ Talk to President Biden in real time using the web interface's audio feature. Re
 **Steps:**
 
 ```bash
-$ git clone https://github.com/shashekhar/ai_president.git
-$ cd ai_president
+$ git clone https://github.com/shashekhar/ai-president.git
+$ cd ai-president
 $ pip install -r requirements.txt
 $ # pip install --force-reinstall ctranslate2==3.24.0 # for cuda 11.8
 ```
@@ -40,7 +40,7 @@ Download XTTS2 and Video-retalking model weights.
 $ conda create -n ai_president python=3.9
 $ conda activate ai_president
 $ conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia # or 11.8
-$ git clone https://github.com/shashekhar/ai_president.git
+$ git clone https://github.com/shashekhar/ai-president.git
 $ cd aaiela
 $ pip install -r requirements.txt
 $ cd models
@@ -56,9 +56,9 @@ $ tail -f /tmp/app.log
 ```bash
 $ git clone https://github.com/shashekhar/ai-president.git
 $ cd ai-president
-$ docker build -t aipresident_conda --network=host --build-arg CUDA_VERSION=12.1 . # or 11.8
+$ docker build -t aipresident --network=host --build-arg CUDA_VERSION=12.1 . # or 11.8
 $ docker run --gpus all -it --rm -v weights:/app/weights -p 5000:5000 aipresident_conda
-$ conda activate aipresident_conda
+$ conda activate aipresident
 $ gunicorn -k eventlet -w 1 --timeout 300 --bind unix:president.sock wsgi:application # start a tmux session
 ```
 
